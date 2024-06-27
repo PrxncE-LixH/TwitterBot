@@ -1,19 +1,17 @@
 import tweepy
 import urllib3
 import time
+import os
+from dotenv import load_dotenv, dotenv_values
 
 # @PrxncE_LixH
 
-# authentication keys - this is user specific and cannot be transferred or exchanged..
-API_key = "**REPLACE***"
-API_key_Secret = "**REPLACE***"
-Bearer_Token = "**REPLACE***"
-Access_Token = "***REPLACE****"
-Access_Token_Secret = "**REPLACE****"
-# end...
 
-auth = tweepy.OAuthHandler(API_key, API_key_Secret)
-auth.set_access_token(Access_Token, Access_Token_Secret)
+# loading variables from .env file
+load_dotenv('.env')
+
+auth = tweepy.OAuthHandler(os.getenv("API_key"), os.getenv("API_key_Secret"))
+auth.set_access_token(os.getenv("Access_Token"), os.getenv("Access_Token_Secret"))
 api = tweepy.API(auth)
 
 
