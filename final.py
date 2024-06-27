@@ -4,7 +4,7 @@ import time
 import os
 from dotenv import load_dotenv, dotenv_values
 
-# @PrxncE_LixH
+# @account for screenshot
 
 
 # loading variables from .env file
